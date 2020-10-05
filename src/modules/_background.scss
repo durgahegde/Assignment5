@@ -1,0 +1,7 @@
+body {
+    @include backImage($backgnd-image, repeat-x, 0, 0);
+    font-family: $font-body;
+    font-size:1em;
+    line-height:2em;
+    background-color: $backgnd-color;
+}

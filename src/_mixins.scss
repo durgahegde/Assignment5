@@ -1,0 +1,36 @@
+@mixin backImage($bgimage, $bgRepeat:no-repeat, $bgPos-x:0, $bgPos-y:0) {
+    background:url($bgimage);
+    background-repeat: $bgRepeat;
+    background-position-x: $bgPos-x;
+    background-position-y: $bgPos-y;
+}
+
+@mixin defaultProperties($wt:100%, $ht:90px, $bg:$grey) {
+    width: $wt;
+    height: $ht;
+    background: $bg;
+}
+
+@mixin headerProperties($color:$black, $fWeight:100, $fSize:2em, $lHeight:0, $marginbottom:0) {
+    color: $color;
+    font-weight: $fWeight;
+    font-size: $fSize;
+    line-height: $lHeight;
+    margin-bottom: $marginbottom;
+}
+
+@mixin break($length) {
+    @if $length == 959px {
+        @media screen and (max-width:959px) {
+            @content;
+        }
+    } @else if $length == 767px {
+        @media screen and (max-width:767px) {
+            @content;
+        }
+    } @else if $length == 459px{ 
+        @media screen and (max-width:459px) {
+            @content;
+        }
+    }
+}
